@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+    	body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 400px;
+}
+
+.form-container {
+    padding: 20px;
+    width: 100%;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+    	
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Registration Form -->
+            <form id="register-form" class="form" action="webapi/myresource/register" method="post">
+                <h2>Register</h2>
+                <label for="register-username">Firstname:</label>
+                <input type="text" id="firstname" name="firstname" required>
+                <label for="register-username">Lastname:</label>
+                <input type="text" id="lastname" name="lastname" required>
+                <label for="register-email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="register-password">Password:</label>
+                <input type="password" id="password" name="password" minlength="8"  maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+  				<small>Password must be between 8 and 20 characters, include at least one digit, one lowercase letter, and one uppercase letter.</small>
+                <label for="register-password">Confirm Password:</label>
+                <input type="password" id="cpassword" name="confirmpassword" required>
+                
+                <button type="submit">Register</button>
+                
+                <p>Already have an account? <a href="http://localhost:8888/uam_pro/index.jsp">Login here</a></p>
+                
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
